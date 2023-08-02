@@ -1,0 +1,373 @@
+
+
+Metadata Text Analysis of Manuscripts
+#Keyword Text Analysis of Microplastic Scholarly Papers#
+
+
+
+The Common Practice/Methods for MP Research Include: 
+Moore Inst. ODP + Scholarly Works (Domain Expertise)
+
+1. Sample device and deployment methods (type and size of sample device used and how it was deployed)
+2. Number of Samples Collected Total
+3. Digestion (type of digestion used in preprocessing, if any)
+4. Filtration (what type of filtration used)
+5. Filter Size (size or sizes of filter(s))
+6. Density Separation (method used for density separation)
+7. Microplastic Identification Method (type(s) of identification used, e.g. visual, flourescent, SEM (scanning electron microscoscopy), light microscopy)
+8. Spectral Analysis (type of spectral analysis used in study, if any, e.g. GC/MS, FTIR, Raman)
+9. Controls (type of controls used, if applicable)
+
+
+These Methods were scraped as a metadata dataset from relevant manuscripts for comprehending the overall contents of our research and microplastic data
+
+To filter and assess the quality and the current level of standardization between Microplastic Research Data, we employed a Keyword Text Analysis over PDFs using R. Keywords were scraped from Metadata Dataset.
+
+
+1. Sample Device Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("Ponar", "grab", "sampler", "long-handled", "steel", "dippers", "triplicate", 
+              "trawls", "manta", "net", "neuston", "net", "replicate", "net", "bottle", 
+              "Neuston", "net", "multipoint", "cross-sectional", "sampling", "Manta", 
+              "trawl", "aperture", "mason", "jar", "Plastic", "scoop", "grabs", "Hand", 
+              "trowel", "excavation", "bag", "nets", "mesh", "Picked", "anthropogenic", 
+              "Glass", "jars", "sampling", "poles", "mesh", "plankton net", "hook-and-line", 
+              "cast", "nets", "RS-750", "Fitec", "steel", "box", "trawl", "intake", 
+              "rope", "net", "Handnets", "Mesh", "Size(mm)", "Manta", "Trawl", "Paried", 
+              "grab", "and", "net", "samples", "drift", "benthic", "specimen", "Grab", 
+              "sample", "surface", "333 um", "mesh", "neuston", "nets", "Picked", "by hand", 
+              "pvc pipe", "hand", "deployment", "device", "deployed", "sampling")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# The section titles to look for in each paper
+section_titles <- c("sample collection", "methods", "sample device")
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check each section title
+  for (section_title in section_titles) {
+    # Find the section
+    section <- str_extract(content, paste0("(?i)", section_title, "(.*?)(?=", paste0(collapse = "|", section_titles), ")"))
+    # If the section contains any of the keywords, increment the counter and break the loop
+    if (any(str_detect(section, paste0(collapse = "|", keywords)))) {
+      counter <- counter + 1
+      break
+    }
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in the 'Sample Collection', 'Methods' or 'Sample Device' sections."))
+
+
+
+
+2. Digestion Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("digestion", "preprocessing", "Hydrogen", "Peroxide", "Fenton's", "Reagent", "hydrogen", "peroxide", 
+              "Wet", "peroxide", "Fentons", "heated", "digest", "NOAA", "wet", "peroxide", "oxidation", "Wet", 
+              "oven", "dried", "wet", "wet", "peroxide", "oxidation", "wet", "peroxide", "oxidation", "Fentons")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# The section titles to look for in each paper
+section_titles <- c("sample collection", "methods", "sample device", "digestion", "preprocessing")
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check each section title
+  for (section_title in section_titles) {
+    # Find the section
+    section <- str_extract(content, paste0("(?i)", section_title, "(.*?)(?=", paste0(collapse = "|", section_titles), ")"))
+    # If the section contains any of the keywords, increment the counter and break the loop
+    if (any(str_detect(section, paste0(collapse = "|", keywords)))) {
+      counter <- counter + 1
+      break
+    }
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in the 'Sample Collection', 'Methods', 'Sample Device', 'Digestion', or 'Preprocessing' sections."))
+
+
+3. Filteration Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("Sieve", "Nitex", "nylon", "mesh", "filter", "mesh", "gridded", "filter", "paper", 
+              "Sieves", "glass", "fiber", "Whatman", "cellulose", "nitrate", "steel", "mesh", 
+              "Bolt", "Cloth-Nitex", "(filter)", "stack", "hand picking", "hand picked")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check if the content contains any of the keywords
+  if (any(str_detect(content, paste0(collapse = "|", keywords)))) {
+    counter <- counter + 1
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in any section of the paper."))
+
+
+
+4. Density Separation Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("SPT", "Hyper-saline solution", "glass funnels", "clamped flexible tubing",
+              "NaCl", "Sodium polytungsenate", "Nal saline", "density separation")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check if the content contains any of the keywords
+  if (any(str_detect(content, paste0(collapse = "|", keywords)))) {
+    counter <- counter + 1
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in any section of the paper."))
+
+
+
+5. Microplastic Identification Methods Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("stereomicroscope", "Visual picking", "Dissection Microscope", 
+              "scanning electron microscopy", "scanning Raman microscope", 
+              "Visual picking", "(SEM)", "Stereomaster", "dissecting scope", 
+              "stereo microscope", "Raman", "scanning Raman microscope")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check if the content contains any of the keywords
+  if (any(str_detect(content, paste0(collapse = "|", keywords)))) {
+    counter <- counter + 1
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in any section of the paper."))
+
+
+6. Spectral Analysis Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("micro-FTIR", "pyr/GC-MS", "Raman", "pyr", "Raman spectroscopy", 
+              "SEM-EDX", "Raman", "FTIR", "Mass spectrometer", "Hot needle test",
+              "stereomicroscope", "PY-GCMS", "Raman microscopy", "SEM", 
+              "scanning Raman microscope", "Jasco", "NRS4500", "confocal")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check if the content contains any of the keywords
+  if (any(str_detect(content, paste0(collapse = "|", keywords)))) {
+    counter <- counter + 1
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in any section of the paper."))
+
+
+
+7. Controls Search
+
+# Install the necessary packages
+# install.packages("pdftools")
+# install.packages("stringr")
+
+# Load the necessary libraries
+library(pdftools)
+library(stringr)
+
+# Define the list of keywords
+keywords <- c("micro-FTIR", "pyr/GC-MS", "Raman", "pyr", "Raman spectroscopy", 
+              "SEM-EDX", "Raman", "FTIR", "Mass spectrometer", "Hot needle test",
+              "stereomicroscope", "PY-GCMS", "Raman microscopy", "SEM", 
+              "scanning Raman microscope", "Jasco", "NRS4500", "confocal")
+
+# Convert all keywords to lower case for case insensitive search
+keywords <- tolower(keywords)
+
+# Define the directory where the manuscripts are located
+manuscripts_dir <- "path_to_your_manuscripts_directory"
+
+# List the files in the manuscripts directory
+manuscripts_files <- list.files(manuscripts_dir, pattern = "*.pdf")
+
+# Initialize a counter for the number of papers that contain the keywords
+counter <- 0
+
+# Iterate over the files
+for (file_name in manuscripts_files) {
+  # Define the file path
+  file_path <- file.path(manuscripts_dir, file_name)
+  # Read the content of the file
+  content <- pdf_text(file_path)
+  # Check if the content contains any of the keywords
+  if (any(str_detect(content, paste0(collapse = "|", keywords)))) {
+    counter <- counter + 1
+  }
+}
+
+# Calculate the percentage of papers that contain the keywords
+percentage <- (counter / length(manuscripts_files)) * 100
+
+print(paste0(percentage, "% of papers contain the keywords in any section of the paper."))
+
