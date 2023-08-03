@@ -10,11 +10,11 @@ You can use the "Distance to nearest hub" algorithm from QGIS to find the closes
 library(qgisprocess)
 
 # Set up QGIS
-options(qgisprocess.path = "C:\\Program Files\\QGIS 3.16\\bin\\qgis-bin.exe")
+options(qgisprocess.path = "/path/to/qgis")
 qgisprocess::qgis_configure()
 
 # Define the path to your QGIS installation
-qgis_path <- "C:\\Program Files\\QGIS 3.16\\bin\\qgis-bin.exe"
+qgis_path <- "/path/to/qgis"
 
 # Define the paths to your input layers
 points_path <- "path/to/points.shp"
