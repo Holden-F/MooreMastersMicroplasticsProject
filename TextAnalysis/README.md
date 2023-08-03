@@ -25,4 +25,3 @@ These Methods were scraped as a metadata dataset from relevant manuscripts for c
 
 To filter and assess the quality and the current level of standardization between Microplastic Research Data, we employed a Keyword Text Analysis over PDFs using R. Keywords were scraped from Metadata Dataset.
 
-## Explanation of files.
