@@ -30,3 +30,19 @@ The data from CDO can help in understanding the seasonal variations in microplas
 
 
 ---
+
+#Summary of Dataset Types and their parameters
+
+| uid                  | mindate     | maxdate     | name                        | datacoverage | id        |
+|----------------------|-------------|-------------|-----------------------------|--------------|-----------|
+| gov.noaa.ncdc:C00861 | 1763-01-01  | 2023-07-28  | Daily Summaries             | 1.00         | GHCND     |
+| gov.noaa.ncdc:C00946 | 1763-01-01  | 2023-07-01  | Global Summary of the Month | 1.00         | GSOM      |
+| gov.noaa.ncdc:C00947 | 1763-01-01  | 2023-01-01  | Global Summary of the Year  | 1.00         | GSOY      |
+| gov.noaa.ncdc:C00345 | 1991-06-05  | 2023-07-30  | Weather Radar (Level II)    | 0.95         | NEXRAD2   |
+| gov.noaa.ncdc:C00708 | 1994-05-20  | 2023-07-28  | Weather Radar (Level III)   | 0.95         | NEXRAD3   |
+| gov.noaa.ncdc:C00821 | 2010-01-01  | 2010-01-01  | Normals Annual/Seasonal     | 1.00         | NORMAL_ANN|
+| gov.noaa.ncdc:C00823 | 2010-01-01  | 2010-12-31  | Normals Daily               | 1.00         | NORMAL_DLY|
+| gov.noaa.ncdc:C00824 | 2010-01-01  | 2010-12-31  | Normals Hourly              | 1.00         | NORMAL_HLY|
+| gov.noaa.ncdc:C00822 | 2010-01-01  | 2010-12-01  | Normals Monthly             | 1.00         | NORMAL_MLY|
+| gov.noaa.ncdc:C00505 | 1970-05-12  | 2014-01-01  | Precipitation 15 Minute     | 0.25         | PRECIP_15 |
+| gov.noaa.ncdc:C00313 | 1900-01-01  | 2014-01-01  | Precipitation Hourly        | 1.00         | PRECIP_HLY|
