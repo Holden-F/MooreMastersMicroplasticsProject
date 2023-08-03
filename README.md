@@ -15,6 +15,7 @@ Recommendations - The recommendations we have on microplastic research. Read thi
 qgisprocess - A folder containing everything for the qgisproccess functions
 
 TextAnalysis - A folder containing everything related to analyzing text.
+CensusAPI
 
 ## Packages used in this repository
 
