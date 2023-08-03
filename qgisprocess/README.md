@@ -51,6 +51,15 @@ The `qgis_function()` function allows you to create your own QGIS functions in R
 
 
 ---
+##More Info
+
+The qgisprocess package provides an R interface to the geoprocessing algorithms of QGIS, a popular and open source desktop geographic information system (GIS) program. The package is a re-implementation of functionality provided by the archived RQGIS package, which was partially revived in the RQGIS3 package.
+
+The package wraps the standalone qgis_process command-line utility, which is available in QGIS >= 3.16. It is meant to support current QGIS releases, i.e. both the latest and the long-term release. Although older QGIS releases are not officially supported, it may work since QGIS 3.16.
+
+The main function is qgis_run_algorithm(algorithm = , ...). It specifies the geoprocessing algorithm to be called with a "provider:algorithm" formatted identifier, e.g. "native:convexhull" or "gdal:hillshade", and it passes the algorithm arguments as R function arguments.
+
+Additional functions are provided to discover available geoprocessing algorithms, retrieve their documentation, handle processing results, manage QGIS plugins, and more. Spatial layers can be passed to qgis_run_algorithm() as file paths but also as sf, stars, terra or raster objects.
 
 
 # Learn More Here at the qgisprocess git repo: [Link](https://github.com/r-spatial/qgisprocess)
