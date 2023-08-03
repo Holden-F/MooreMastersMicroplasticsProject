@@ -31,7 +31,7 @@ The data from CDO can help in understanding the seasonal variations in microplas
 
 ---
 
-# Summary of Dataset Types and their parameters
+# Summary of Dataset Types and Their Parameters
 
 | uid                  | mindate     | maxdate     | name                        | datacoverage | id        |
 |----------------------|-------------|-------------|-----------------------------|--------------|-----------|
