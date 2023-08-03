@@ -35,7 +35,7 @@ qgisprocess::qgis_run_algorithm(
 ```
 This script will create a new layer at output_path that contains all the features from the points_path layer, with two additional fields: "HubName", which contains the ID of the nearest station for each point, and "HubDist", which contains the distance to the nearest station.
 
-## Note: Replace "path/to/points.shp", "path/to/stations.shp", and "path/to/output.shp" with the actual paths to your input and output files. Also, replace "station_id" with the actual field name in the stations layer that contains the ID of each station.
+#### Note: Replace "path/to/points.shp", "path/to/stations.shp", and "path/to/output.shp" with the actual paths to your input and output files. Also, replace "station_id" with the actual field name in the stations layer that contains the ID of each station.
 
 Alternatively, you could use the sf package in R to find the closest stream gauging station to each point. Here is a basic example:
 ```R
