@@ -1,4 +1,4 @@
-# Climate Data Online: Web Services Documentation
+# Climate Data Online: Web Service Endpoint Documentation Info
 
 ## Endpoints
 
