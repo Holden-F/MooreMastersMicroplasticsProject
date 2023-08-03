@@ -28,8 +28,10 @@ https://www.ncei.noaa.gov/cdo-web/api/v2/datasets?datatypeid=TOBS
 
 Fetch all available datasets with data for a given set of stations:
 https://www.ncei.noaa.gov/cdo-web/api/v2/datasets?stationid=COOP:310090&stationid=COOP:310184&stationid=COOP:310212
+```
 
 ###Data Categories
+```markdown
 Fetch all available data categories:
 https://www.ncei.noaa.gov/cdo-web/api/v2/datacategories?limit=41
 
@@ -38,8 +40,22 @@ https://www.ncei.noaa.gov/cdo-web/api/v2/datacategories/ANNAGR
 
 Fetch data categories for a given set of locations:
 https://www.ncei.noaa.gov/cdo-web/api/v2/datacategories?locationid=CITY:US390029&locationid=FIPS:37
+```
 
 ###Data Types
+```markdown
 Fetch available data types:
 https://www.ncei.noaa.gov/cdo-web/api/v2/datatypes
+
+Fetch more information about the ACMH data type id:
+https://www.ncei.noaa.gov/cdo-web/api/v2/datatypes/ACMH
+
+Fetch data types with the air temperature data category:
+https://www.ncei.noaa.gov/cdo-web/api/v2/datatypes?datacategoryid=TEMP&limit=56
+
+Fetch data types that support a given set of stations:
+https://www.ncei.noaa.gov/cdo-web/api/v2/datatypes?stationid=COOP:310090&stationid=COOP:310184&stationid=COOP:310212
+```
+
+
 
