@@ -18,3 +18,33 @@ GIS can be used to create models that predict future trends in microplastic poll
 QGIS is an open-source GIS software, meaning it is free to use and has a large community of users and developers who contribute to its development and provide support to other users.
 
 The repository, `qgisprocess`, is an R package that provides a simple and convenient way to interact with QGIS from within R. This means you can leverage the power of QGIS for spatial analysis and visualization, while also taking advantage of the statistical and data manipulation capabilities of R.
+
+
+---
+
+# Why QGISProcess and QGIS for Rshiny and Microplastics Research?
+
+## QGIS Integration
+QGIS is a powerful open-source Geographic Information System (GIS) that can handle a wide range of geospatial data formats. If your data portal includes geospatial data (e.g., locations of microplastic sampling sites, pollution levels in different geographic areas), the `qgisprocess` package could be used to process and analyze this data directly from R. For example, you could use QGIS commands to perform spatial joins, create buffers around points of interest, or calculate area statistics, all within your R scripts.
+
+**Unique Capability:** The `qgisprocess` package provides a simple, R-friendly interface to QGIS console commands. This allows R users to leverage the extensive geospatial capabilities of QGIS directly from R. This is a unique feature as not many R packages offer such a seamless integration with QGIS.
+
+## Access to QGIS Algorithms
+QGIS includes a wide range of geospatial algorithms that can be used for data analysis and visualization. For example, you could use the `qgis_algorithms()` function to access QGIS's algorithms for spatial interpolation. This could be used to create a continuous surface (e.g., a heat map) from your microplastic sample data, providing a visual representation of microplastic pollution levels across different areas.
+
+**Unique Capability:** The package provides access to all QGIS algorithms via R. This includes a wide range of geospatial algorithms that are not typically available in R packages. For example, the function `qgis_algorithms()` lists all available QGIS algorithms.
+
+## Flexible Argument Handling
+The `qgis_args()` function allows you to specify arguments for QGIS commands in a way that is consistent with R's syntax. This could be useful for automating data processing tasks. For example, you could write a script that loops over all the datasets in your portal, applies a QGIS algorithm to each one (with specific arguments), and saves the results.
+
+**Unique Capability:** The package provides flexible argument handling for QGIS commands. This is done through the `qgis_args()` function, which allows users to specify arguments for QGIS commands in a way that is consistent with R's syntax.
+
+## QGIS Configuration and Detection
+If your data portal is intended to be used by other researchers, the `qgis_configure()` and `qgis_detect()` functions could be used to ensure that users have QGIS correctly installed and configured on their systems. This could help to avoid errors and ensure that your data and scripts are accessible to a wide audience.
+
+**Unique Capability:** The package provides functions for configuring and detecting QGIS installations. For example, the `qgis_configure()` function allows users to specify the path to their QGIS installation, and the `qgis_detect()` function can be used to automatically detect the path to the QGIS installation.
+
+## QGIS Function Creation
+The `qgis_function()` function allows you to create your own QGIS functions in R. This could be useful for creating custom data processing or analysis workflows. For example, you could create a function that takes a dataset as input, performs a series of QGIS operations (e.g., spatial filtering, interpolation, visualization), and returns a processed dataset or a visualization. This could help to standardize data processing and analysis workflows across your portal, ensuring consistency and reproducibility.
+
+**Unique Capability:** The package allows users to create their own QGIS functions in R. This is done through the `qgis_function()` function, which creates an R function that wraps a QGIS algorithm.
