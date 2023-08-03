@@ -2,6 +2,25 @@
 
 Geographic Information Systems (GIS), specifically QGIS, can be extremely useful for analyzing and visualizing microplastic pollution data in the US. Here's how:
 
+## Explanations of files:
+
+
+	
+Add files via upload
+	
+Algorithms.R
+
+	
+Install.R
+
+	
+Nearest_Streamgauge_Example.md
+
+Algorithm_Example - folder containing 
+
+
+---
+
 ## Spatial Analysis
 GIS allows for the spatial analysis of microplastic pollution data. This means you can examine the distribution of microplastic pollution across different geographical areas, identify hotspots, and analyze trends over time.
 
