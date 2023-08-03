@@ -1,0 +1,64 @@
+#To view available variables, you can use the load_variables() function. Here is an example:
+#You can also See Excel File "ACS52021_Table_Codes" in this Folder for Filtering and Viewing ACS5 2021 Variables and Group Codes. 
+#You can use this as a framework for organizing future dataset variables, or to advance your search in the ACS5 2021 datasets.
+
+
+# Install and load the tidycensus package
+install.packages("tidycensus")
+library(tidycensus)
+
+# Set your census API key
+census_api_key("your_api_key_here", install = TRUE, overwrite = TRUE)
+
+# Load available variables for the 2019 ACS 5-year estimates
+variables <- load_variables(2019, "acs5", cache = TRUE)
+
+# Print variables
+print(variables)
+
+
+#If you want to search by Geography, you can try out the following
+#Here's how you can retrieve the data for all counties using the get_acs() function:
+
+# Set your census API key
+census_api_key("your_api_key_here", install = TRUE, overwrite = TRUE)
+
+# Get ACS data for all counties
+data <- get_acs(geography = "county", variables = "B19013_001", year = 2019, survey = "acs5")
+
+# Print the data
+print(data
+
+#In this script:
+#get_acs(geography = "county", variables = "B19013_001", year = 2019, survey = "acs5") 
+#retrieves ACS data for all counties. The variables parameter specifies which variables to retrieve
+#(in this case, "B19013_001"). print(data) prints the retrieved data.
+
+#Remember to replace "your_api_key_here" with your actual API key. After running this script, 
+#data will contain a tibble (a type of data frame used in the tidyverse) of the requested ACS data for all counties.
+
+#If "B19013_001" is not available at the county level, get_acs() will return an error. 
+#You can replace "B19013_001" with the variable you're interested in.
+
+
+#If you're looking for specific variables within the variables table you obtained using load_variables(), 
+#you can use the dplyr package's filter() function to subset the table based on your criteria.
+
+#For example, let's assume you are interested in variables related to income:
+
+install.packages(c("tidycensus", "dplyr"))
+library(tidycensus)
+library(dplyr)
+
+# Set your census API key
+census_api_key("your_api_key_here", install = TRUE, overwrite = TRUE)
+
+# Load available variables for the 2019 ACS 5-year estimates
+variables <- load_variables(2019, "acs5", cache = TRUE)
+
+# Filter for variables related to income
+income_variables <- variables %>%
+  filter(grepl("income", label, ignore.case = TRUE))
+
+# Print income-related variables
+print(income_variables)
