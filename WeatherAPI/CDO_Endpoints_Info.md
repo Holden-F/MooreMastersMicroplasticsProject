@@ -16,8 +16,8 @@
 
 ### Datasets 
 
-Fetch all available datasets:
 ```markdown
+Fetch all available datasets
 https://www.ncei.noaa.gov/cdo-web/api/v2/datasets
 
 Fetch all information about the GSOY dataset specifically:
