@@ -8,7 +8,7 @@ Metadata Text Analysis of Manuscripts
 
 
 The Common Practice/Methods for MP Research Include: 
-Moore Inst. ODP + Scholarly Works (Domain Expertise)
+Moore Inst. Open Data Portal + Scholarly Works (Domain Expertise)
 
 1. Sample device and deployment methods (type and size of sample device used and how it was deployed)
 2. Number of Samples Collected Total
