@@ -26,7 +26,7 @@ Long-term climate data can help researchers understand the impact of climate cha
 
 The data from CDO can help in understanding the seasonal variations in microplastic pollution. Certain seasons may have higher levels of pollution due to factors such as increased human activity or weather events.
 
-> **See Files:** In the folder there is a file for setting up your API called "CDO_API_Setup.R", as well as another file called "API_Call_Example.R" which gives you a basic API call function.
+> **See Files:** In the folder there is a file for setting up your API called "CDO_API_Setup.R", as well as another file called "API_Call_Example.R" which gives you a basic API call function. Also see the file "CDO_Examples" to learn and filter through the different datasets.
 
 
 ---
