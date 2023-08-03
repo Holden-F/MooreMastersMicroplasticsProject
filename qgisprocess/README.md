@@ -55,46 +55,4 @@ The `qgis_function()` function allows you to create your own QGIS functions in R
 
 # Learn More Here at the qgisprocess git repo: [Link](https://github.com/r-spatial/qgisprocess)
 
-### Here's a brief description of each file in the repository:
 
-**R/compat-raster.R:** This file contains compatibility functions for the raster package. It's used to handle raster data types in R.
-
-**R/compat-sf.R:** This file contains compatibility functions for the sf package. It's used to handle simple features data types in R.
-
-**R/compat-stars.R:** This file contains compatibility functions for the stars package. It's used to handle spatiotemporal arrays in R.
-
-**R/compat-terra.R:** This file contains compatibility functions for the terra package. It's used to handle spatial data types in R.
-
-**R/qgis-algorithms.R:** This file contains functions related to QGIS algorithms. It's likely used to run and manage QGIS algorithms.
-
-**R/qgis-arguments.R:** This file contains functions related to QGIS arguments. It's likely used to handle arguments for QGIS functions.
-
-**R/qgis-configure.R:** This file contains functions to configure QGIS. It's likely used to set up and manage QGIS configurations.
-
-**R/qgis-detect.R:** This file contains functions to detect QGIS. It's likely used to check if QGIS is installed and available.
-
-**R/qgis-function.R:** This file contains functions related to QGIS functions. It's likely used to define and manage QGIS functions.
-
-**R/qgis-has.R:** This file contains functions to check the presence of certain QGIS features. It's likely used to verify if certain QGIS features or components are available.
-
-**R/qgis-help.R:** This file contains functions to provide help related to QGIS. It's likely used to generate help documentation or messages for QGIS functions.
-
-**R/qgis-output.R:** This file contains functions related to QGIS output. It's likely used to handle the output from QGIS functions.
-
-**R/qgis-plugins.R:** This file contains functions related to QGIS plugins. It's likely used to manage QGIS plugins.
-
-**R/qgis-result.R:** This file contains functions related to QGIS results. It's likely used to handle the results from QGIS functions.
-
-**R/qgis-run-algorithm.R:** This file contains functions to run QGIS algorithms. It's likely used to execute QGIS algorithms.
-
-**R/qgis-run.R:** This file contains functions to run QGIS. It's likely used to start and manage QGIS sessions.
-
-**R/qgis-state.R:** This file contains functions related to the state of QGIS. It's likely used to manage and check the state of QGIS.
-
-**R/qgis-tmp.R:** This file contains functions related to temporary files in QGIS. It's likely used to manage temporary files created during QGIS sessions.
-
-**R/qgisprocess-deprecated.R:** This file contains deprecated functions in the qgisprocess package. It's likely used to manage functions that are no longer recommended for use.
-
-**R/qgisprocess-package.R:** This file contains information about the qgisprocess package. It's likely used to define the package and its components.
-
-**R/zzz.R:** This file typically contains functions that need to be run when the package is loaded or unloaded. It's likely used to manage package startup and shutdown processes.
