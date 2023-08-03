@@ -48,3 +48,9 @@ If your data portal is intended to be used by other researchers, the `qgis_confi
 The `qgis_function()` function allows you to create your own QGIS functions in R. This could be useful for creating custom data processing or analysis workflows. For example, you could create a function that takes a dataset as input, performs a series of QGIS operations (e.g., spatial filtering, interpolation, visualization), and returns a processed dataset or a visualization. This could help to standardize data processing and analysis workflows across your portal, ensuring consistency and reproducibility.
 
 **Unique Capability:** The package allows users to create their own QGIS functions in R. This is done through the `qgis_function()` function, which creates an R function that wraps a QGIS algorithm.
+
+
+---
+
+
+# Learn More Here at the qgisprocess git repo: [Link](https://github.com/r-spatial/qgisprocess)
