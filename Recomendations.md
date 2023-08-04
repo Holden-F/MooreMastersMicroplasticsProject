@@ -10,6 +10,8 @@ Collect samples using a standardized method and accurately record and describe t
 
 The dataset should contain Latitude and Longitude fields. All data should use the same coordinate reference system (CRS) to record positional data. Data needs to be accurately positioned on the Earth's surface, so include the coordinates with each location sampled. Confirm that the coordinates are in a coordinate system compatible with your GIS/QGIS program, usually WGS84 for global datasets.
 
+We recommend "USA_Contiguous_Albers_Equal_Area_Conic" for mainland USA or "North_America_Albers_Equal_Area_Conic" for all of North America.
+
  Do not use vague explanations of the sampling site. The CRS should be clearly documented in the metadata.
 
 **Unique Identifiers:** It's a good practice to have a unique identifier for each point.
