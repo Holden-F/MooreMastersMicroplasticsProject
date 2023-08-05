@@ -15,11 +15,14 @@ Recommendations - The recommendations we have on microplastic research. Read thi
 qgisprocess - A folder containing everything for the qgisproccess functions
 
 TextAnalysis - A folder containing everything related to analyzing text.
-CensusAPI
+
+CensusAPI - A folder containing everything related to building a census data pipeline.
+
+WeatherAPI - A folder containing everything related to building a weather data pipleline.
 
 ## Packages used in this repository
 
-| Package | Description | Link
+| Package | Description | Link |
 | ------- | ------------- | ----- |
 | Shiny | Easy interactive web applications with R | https://github.com/rstudio/shiny |
 | bs4Dash | A 'Bootstrap 4' Version of 'shinydashboard' | https://github.com/RinteRface/bs4Dash |
